@@ -111,6 +111,33 @@ const businesses = [
     }
   ];
 
-  export const useBusinesses = () => {
-      return businesses.slice()
-  }
+// original function
+//   export const useBusinesses = () => {
+//     return businesses.slice()
+// }
+
+// NY businesses filter
+//   export const nyBusinesses = businesses.filter(businessesObject => {
+//       if (businessesObject.addressStateCode === "NY") {
+//           return true
+//       }
+//       return false
+//   })
+
+//   export const useBusinesses = () => {
+//     return nyBusinesses.slice()
+// }
+
+// Manufacturing Business filter
+export const manufacturingBusinesses = businesses.filter(businessObject => {
+    if (businessObject.companyIndustry === "Manufacturing") {
+        return true
+    }
+    return false
+});
+
+export const useBusinesses = () => {
+    return manufacturingBusinesses.slice()
+}
+
+
